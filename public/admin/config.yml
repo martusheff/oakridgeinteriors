@@ -27,11 +27,11 @@ collections:
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Description', name: 'description', widget: 'string' }
-          - { label: 'Hero Image', name: 'hero', widget: 'image', choose_url: false }
-          - { label: 'Hero Background Image', name: 'herobackground', widget: 'image', choose_url: false }
+          - { label: 'Hero Image', name: 'heroimage', widget: 'image', choose_url: false }
+          - { label: 'Hero Background Image', name: 'herobackgroundimage', widget: 'image', choose_url: false }
           - { label: 'Hero CTA Label', name: 'heroctalabel', widget: 'string' }
           - { label: 'Hero CTA URL', name: 'heroctaurl', widget: 'string' }
-          
+
   - name: "posts"
     label: "Posts"
     folder: "content/posts" # Folder for @nuxt/content

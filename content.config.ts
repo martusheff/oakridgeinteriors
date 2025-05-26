@@ -1,8 +1,18 @@
-import { defineCollection } from "@nuxt/content";
+import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
-collections: {
-    content: defineCollection({
+export default defineContentConfig({
+  collections: {
+    page: defineCollection({
+      source: 'page/*.md',
       type: 'page',
-      source: '**/*.md'
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        heroimage: z.string(),
+        herobackgroundimage: z.string(),
+        heroctalabel: z.string(),
+        heroctaurl: z.string()
+      })
     })
   }
+})

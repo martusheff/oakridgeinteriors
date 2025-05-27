@@ -3,7 +3,7 @@
     <!-- Logo Section -->
     <div class="flex justify-center items-center bg-[#DCD7C9]/25">
       <NuxtLink to="/"
-        class="font-bold opacity-80 hover:opacity-100 transition-opacity rounded outline-offset-8 pointer-events-auto">
+        class="font-bold opacity-90 hover:opacity-100 transition-opacity rounded outline-offset-8 pointer-events-auto">
         <img src="/logo.svg" alt="Logo" class="h-40 px-2 sm:px-6" style="object-fit: contain;" />
       </NuxtLink>
     </div>
@@ -89,7 +89,7 @@ const navItems = [
   { href: '/services', label: 'Services' },
   { href: '/reviews', label: 'Reviews' },
   { href: '/jobs', label: 'Jobs' },
-  { href: '/faq', label: 'FAQs' },
+  { href: '/gallery', label: 'Gallery' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' }
 

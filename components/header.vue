@@ -1,5 +1,5 @@
 <template>
-  <header class="flex w-full min-h-32 bg-white border-b border-black/20 sticky top-0 z-50">
+  <header class="flex w-full min-h-32 bg-white border-b border-black/10 sticky top-0 z-50">
     <!-- Logo Section -->
     <div class="flex justify-center items-center bg-[#DCD7C9]/25">
       <NuxtLink to="/"
@@ -42,13 +42,13 @@
           </svg>
         </HeaderContactCard>
       </div>
-      <hr />
+      <hr class="border-black/10" />
       <!-- Navigation Links -->
       <div class="flex-1 px-4 flex justify-between items-center text-sm tracking-wider font-bebas-neue">
         <nav class="hidden sm:flex items-center space-x-8 px-12">
           <div v-for="item in navItems" :key="item.label" class="relative group">
             <NuxtLink :to="item.href"
-              class="text-md transition-colors hover:bg-transparent hover:text-secondary relative"
+              class="text-lg transition-colors hover:bg-transparent hover:text-secondary relative"
               :class="{ 'text-secondary': isActive(item.href) }">
               {{ item.label }}
               <span
@@ -58,7 +58,7 @@
           </div>
         </nav>
         <div class="flex w-full items-center justify-between sm:justify-end">
-          <NuxtLink to="/contact" class="bg-[#A27B5C] px-2 py-3 sm:py-4 sm:px-6 text-white text-md leading-none">
+          <NuxtLink to="/contact" class="bg-[#A27B5C] px-2 py-3 sm:py-4 sm:px-6 text-white text-lg leading-none">
             GET AN ESTIMATE
           </NuxtLink>
           <button>

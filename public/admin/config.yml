@@ -43,7 +43,6 @@ collections:
           - { label: "Hero Background Image", name: "herobackground", widget: "image" }
           - { label: "CTA Label", name: "herocta", widget: "string" }
           - { label: "CTA URL", name: "heroctaurl", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
   - name: "config"
     label: "Config"
     files:

@@ -86,11 +86,11 @@ const route = useRoute()
 
 const navItems = [
   { href: '/', label: 'Home' },
-  // { href: '/services', label: 'Services' },
-  // { href: '/reviews', label: 'Reviews' },
-  // { href: '/jobs', label: 'Jobs' },
-  // { href: '/faq', label: 'FAQs' },
-  // { href: '/about', label: 'About' }
+  { href: '/services', label: 'Services' },
+  { href: '/reviews', label: 'Reviews' },
+  { href: '/jobs', label: 'Jobs' },
+  { href: '/faq', label: 'FAQs' },
+  { href: '/about', label: 'About' }
 ]
 
 const isActive = (href) => {

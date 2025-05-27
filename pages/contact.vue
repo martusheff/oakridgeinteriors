@@ -13,6 +13,7 @@ useSeoMeta({
 <template>
   <div class="w-full flex flex-col">
     <LowImpactHero :title="contact?.title" :image="contact?.herobackground" />
+    <Contact/>
     <Reviews />
   </div>
 </template>

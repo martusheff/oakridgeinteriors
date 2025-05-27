@@ -1,10 +1,10 @@
 <template>
   <header class="flex w-full min-h-32 bg-white border-b border-black/10 sticky top-0 z-50">
     <!-- Logo Section -->
-    <div class="flex justify-center items-center bg-[#DCD7C9]/25">
+    <div class="flex justify-center items-center border-r border-r-black/5 ">
       <NuxtLink to="/"
-        class="font-bold opacity-90 hover:opacity-100 transition-opacity rounded outline-offset-8 pointer-events-auto">
-        <img src="/logo.svg" alt="Logo" class="h-40 px-2 sm:px-6" style="object-fit: contain;" />
+        class="font-bold transition-opacity rounded outline-offset-8 pointer-events-auto">
+        <Logo fill="#2C3930" class="transition-opacity opacity-95 hover:opacity-100 h-40 w-60 px-2 sm:px-4 object-contain"/>
       </NuxtLink>
     </div>
 
@@ -49,7 +49,7 @@
           <div v-for="item in navItems" :key="item.label" class="relative group">
             <NuxtLink :to="item.href"
               class="text-lg transition-colors hover:bg-transparent hover:text-secondary relative"
-              :class="{ 'text-secondary': isActive(item.href) }">
+              :class="{ 'text-[#3F4F44]': isActive(item.href) }">
               {{ item.label }}
               <span
                 class="absolute bottom-0 left-0 w-full h-0.5 bg-[#3F4F44] transition-transform duration-300 ease-out origin-left"
@@ -81,6 +81,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import HeaderContactCard from './HeaderContactCard.vue'
+import Logo from './Logo.vue'
 
 const route = useRoute()
 

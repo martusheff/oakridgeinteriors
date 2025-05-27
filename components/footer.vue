@@ -1,11 +1,11 @@
 <template>
-  <footer class="bg-[#3F4F44] text-center">
+  <footer class="bg-[#2C3930] text-center">
     <div class="p-4 flex">
       <div class="flex-1 flex flex-col">
         <NuxtLink to="/" class="font-bold  transition-opacity rounded invert outline-offset-8 pointer-events-auto">
           <img src="/logo.svg" alt="Logo"
             class=" opacity-80 hover:opacity-100 transition-all duration-300 h-40 px-2 sm:px-6"
-            style="object-fit: contain;" />
+             />
         </NuxtLink>
         <hr class="mx-12 my-4 text-white/50"/>
         <div class="flex  text-white justify-between mx-12  tracking-wider text-lg font-extralight">

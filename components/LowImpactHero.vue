@@ -5,9 +5,9 @@
     <div>
 
     </div>
-    <div class="flex flex-col absolute top-1/2 left-4 sm:left-6 transform -translate-y-1/2 pt-4 gap-2">
+    <div class="flex flex-col absolute top-1/2 left-4 sm:left-6 transform -translate-y-1/2 pt-4 ">
       <p class="text-white text-xs font-bold tracking-widest">OAKRIDGE INTERIORS</p>
-      <h1 class=" text-3xl sm:text-6xl text-white tracking-wider font-bebas-neue leading-tight">
+      <h1 class=" text-5xl sm:text-7xl text-white tracking-wider font-bebas-neue leading-tight">
         {{ title }}
       </h1>
     </div>

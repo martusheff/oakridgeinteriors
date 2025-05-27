@@ -1,10 +1,8 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-
-  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1080.000000pt" height="648.000000pt"
-    viewBox="0 0 1080.000000 648.000000" preserveAspectRatio="xMidYMid meet">
-    <g transform="translate(0.000000,648.000000) scale(0.100000,-0.100000)" fill="#000" stroke="none">
+<template>
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" class=" object-contain"
+    width="1080.000000pt" height="648.000000pt" viewBox="0 0 1080.000000 648.000000"
+    preserveAspectRatio="xMidYMid meet">
+    <g transform="translate(0.000000,648.000000) scale(0.100000,-0.100000)" :fill="fill" stroke="none">
       <path d="M5366 6093 c-80 -22 -90 -23 -105 -9 ..." />
       <path d="M5366 6093 c-80 -22 -90 -23 -105 -9 -20 18 -37 20 -45 7 -3 -5 3
 -62 14 -127 11 -66 20 -127 20 -136 0 -29 -47 -22 -91 13 -49 39 -91 51 -129
@@ -292,3 +290,12 @@ c31 0 37 3 28 12 -26 26 -14 81 33 151 44 65 45 67 20 65 -14 -1 -24 -7 -23
 -26 0 26 c0 18 -7 28 -26 35 -31 12 -101 12 -130 0z" />
     </g>
   </svg>
+</template>
+
+<script lang="ts" setup>
+defineProps({
+  fill: String,
+})
+</script>
+
+<style></style>

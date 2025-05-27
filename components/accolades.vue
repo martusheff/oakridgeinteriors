@@ -1,12 +1,12 @@
 <template>
-    <div class="w-full py-12 md:py-0 gap-16 md:gap-8 flex flex-col md:flex-row bg-[#3F4F44] min-h-56 items-center justify-center px-8">
+    <div class="w-full py-12 md:py-0 gap-16 md:gap-8 flex flex-col md:flex-row bg-[#2C3930] min-h-56 items-center justify-center px-8">
         <div class="flex-1  w-full h-full flex flex-col items-center justify-center text-white">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-16 mb-2">
                 <path
                     d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM1.49 15.326a.78.78 0 0 1-.358-.442 3 3 0 0 1 4.308-3.516 6.484 6.484 0 0 0-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 0 1-2.07-.655ZM16.44 15.98a4.97 4.97 0 0 0 2.07-.654.78.78 0 0 0 .357-.442 3 3 0 0 0-4.308-3.517 6.484 6.484 0 0 1 1.907 3.96 2.32 2.32 0 0 1-.026.654ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM5.304 16.19a.844.844 0 0 1-.277-.71 5 5 0 0 1 9.947 0 .843.843 0 0 1-.277.71A6.975 6.975 0 0 1 10 18a6.974 6.974 0 0 1-4.696-1.81Z" />
             </svg>
             <p class="font-bebas-neue tracking-wider text-4xl">JOIN</p>
-            <p class="tracking-wider text-lg text-center font-light ">100+ Happy Clients</p>
+            <p class="tracking-wider text-lg text-center font-light ">Our 100s Happy Clients</p>
 
         </div>
                 <div class="flex-1  w-full h-full flex flex-col items-center justify-center text-white">
@@ -16,7 +16,7 @@
             </svg>
 
             <p class="font-bebas-neue tracking-wider text-4xl">TRUST</p>
-            <p class="tracking-wider text-lg text-center font-light ">5+ Years of Experience</p>
+            <p class="tracking-wider text-lg text-center font-light ">Our Years of Experience</p>
 
         </div>
         <div class="flex-1  w-full h-full flex flex-col items-center justify-center text-white">
@@ -27,7 +27,7 @@
             </svg>
 
             <p class="font-bebas-neue tracking-wider text-4xl">ENJOY</p>
-            <p class="tracking-wider text-lg text-center font-light ">A 100% Satisfaction Guarantee</p>
+            <p class="tracking-wider text-lg text-center font-light ">A Satisfaction Guarantee</p>
 
         </div>
 

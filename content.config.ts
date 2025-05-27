@@ -11,7 +11,8 @@ export default defineContentConfig({
             hero: z.string(),
             herobackground: z.string(),
             herocta: z.string(),
-            heroctaurl: z.string()
+            heroctaurl: z.string(),
+            images: z.array(z.string()).optional()
         })
     }),
     config: defineCollection({

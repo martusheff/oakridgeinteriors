@@ -63,6 +63,20 @@ collections:
           - { label: "Hero Background Image", name: "herobackground", widget: "image" }
           - { label: "CTA Label", name: "herocta", widget: "string" }
           - { label: "CTA URL", name: "heroctaurl", widget: "string" }
+      - file: "content/page/gallery.md"
+        label: "Gallery Page"
+        name: "gallery"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Hero Background Image", name: "herobackground", widget: "image" }
+          - label: "Gallery"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: Image, name: image, widget: image }
+
+              
   - name: "config"
     label: "Config"
     files:

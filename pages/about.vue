@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import GetAnEstimateCard from '~/components/GetAnEstimateCard.vue'
 import LowImpactHero from '~/components/LowImpactHero.vue'
 
 
@@ -41,6 +42,7 @@ useSeoMeta({
 
     <Accolades />
     <Reviews />
+    <GetAnEstimateCard/>
 
   </div>
 </template>

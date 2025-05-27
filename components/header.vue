@@ -61,7 +61,7 @@
           <NuxtLink to="/contact" class="bg-[#A27B5C] px-2 py-3 sm:py-4 sm:px-6 text-white text-lg leading-none">
             GET AN ESTIMATE
           </NuxtLink>
-          <button>
+          <button class="flex md:hidden">
             <div class="w-10 h-10 flex items-center justify-center ml-3 hover:scale-110 transition-all duration-300">
 
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

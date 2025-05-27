@@ -1,5 +1,24 @@
+<script setup lang="ts">
+import { GetAnEstimateCard } from '#components';
+import LowImpactHero from '~/components/LowImpactHero.vue'
+
+
+const { data: contact } = await useAsyncData(() => queryCollection('pages').path('/page/contact').first())
+useSeoMeta({
+  title: contact.value?.title || 'Contact',
+  description: contact.value?.description || 'Contact'
+})
+</script>
+
 <template>
-  <section>
-    <p>This page will be displayed at the /about route.</p>
-  </section>
+  <div class="w-full flex flex-col">
+    <LowImpactHero :title="contact?.title" :image="contact?.herobackground" />
+    <Reviews />
+  </div>
 </template>
+
+<style scoped>
+.font-bebas-neue {
+  font-family: 'Bebas Neue', sans-serif;
+}
+</style>

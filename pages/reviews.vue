@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { GetAnEstimateCard } from '#components';
 import LowImpactHero from '~/components/LowImpactHero.vue'
 
 
@@ -13,6 +14,7 @@ useSeoMeta({
   <div class="w-full flex flex-col">
     <LowImpactHero :title="reviews?.title" :image="reviews?.herobackground" />
     <Reviews />
+    <GetAnEstimateCard/>
   </div>
 </template>
 

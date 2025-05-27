@@ -12,7 +12,11 @@ export default defineContentConfig({
             herobackground: z.string(),
             herocta: z.string(),
             heroctaurl: z.string(),
-            images: z.array(z.string()).optional()
+            images: z.array(
+              z.object({
+                image: z.string()
+              })
+            ).optional()
         })
     }),
     config: defineCollection({

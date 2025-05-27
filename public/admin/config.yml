@@ -39,8 +39,17 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
-          - { label: "Hero Image", name: "heroImage", widget: "image" }
-          - { label: "Hero Background Image", name: "heroBackgroundImage", widget: "image" }
-          - { label: "CTA Label", name: "ctaLabel", widget: "string" }
-          - { label: "CTA URL", name: "ctaUrl", widget: "string" }
+          - { label: "Hero Image", name: "hero", widget: "image" }
+          - { label: "Hero Background Image", name: "herobackground", widget: "image" }
+          - { label: "CTA Label", name: "herocta", widget: "string" }
+          - { label: "CTA URL", name: "heroctaurl", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+  - name: "config"
+    label: "Config"
+    files:
+      - file: "content/config/website.json"
+        label: "Site Config"
+        name: "website"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }

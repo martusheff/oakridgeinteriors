@@ -90,7 +90,9 @@ const navItems = [
   { href: '/reviews', label: 'Reviews' },
   { href: '/jobs', label: 'Jobs' },
   { href: '/faq', label: 'FAQs' },
-  { href: '/about', label: 'About' }
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' }
+
 ]
 
 const isActive = (href) => {

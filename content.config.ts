@@ -13,6 +13,14 @@ export default defineContentConfig({
             herocta: z.string(),
             heroctaurl: z.string()
         })
+    }),
+    config: defineCollection({
+        type: 'data',
+        source: 'page/config.json',
+        schema: z.object({
+            title: z.string(),
+            description: z.string(),
+        })
     })
   }
 })

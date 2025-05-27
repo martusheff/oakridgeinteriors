@@ -15,6 +15,7 @@ useSeoMeta({
     <LowImpactHero :title="contact?.title" :image="contact?.herobackground" />
     <Contact/>
     <Reviews />
+    
   </div>
 </template>
 

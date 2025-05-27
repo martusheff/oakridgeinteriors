@@ -3,25 +3,24 @@
     <div class="p-4 flex">
       <div class="flex-1 flex flex-col">
         <NuxtLink to="/" class="font-bold  transition-opacity rounded invert outline-offset-8 pointer-events-auto">
-          <img src="/logo.svg" alt="Logo"
-            class=" opacity-80 hover:opacity-100 transition-all duration-300 h-40 px-2 sm:px-6"
-             />
+          <Logo fill="fff"
+            class="transition-opacity opacity-95 hover:opacity-100 h-45 w-80 px-2 lg:px-8 object-contain" />
+
         </NuxtLink>
-        <hr class="mx-12 my-4 text-white/50"/>
         <div class="flex  text-white justify-between mx-12  tracking-wider text-lg font-extralight">
-          <NuxtLink to="/" class=" opacity-80  hover:opacity-100 transition-all duration-300 ">
+          <NuxtLink to="/" :class="navButton">
             Home
           </NuxtLink>
-          <NuxtLink to="/" class="opacity-80 hover:opacity-100 transition-all duration-300  ">
+          <NuxtLink to="/" :class="navButton">
             About
           </NuxtLink>
-          <NuxtLink to="/" class=" opacity-80 hover:opacity-100 transition-all duration-300 ">
+          <NuxtLink to="/" :class="navButton">
             Reviews
           </NuxtLink>
-          <NuxtLink to="/" class="opacity-80 hover:opacity-100 transition-all duration-300">
+          <NuxtLink to="/" :class="navButton">
             Portfolio
           </NuxtLink>
-          <NuxtLink to="/" class="opacity-80 hover:opacity-100 transition-all duration-300">
+          <NuxtLink to="/" :class="navButton">
             Contact
           </NuxtLink>
         </div>
@@ -35,6 +34,11 @@
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+const navButton = 'hover:bg-white text-xl px-3 py-1 text-white hover:text-[#2C3930] font-bebas-neue hover:scale-105 transition-all duration-300';
+</script>
+
 
 <style scoped>
 .font-bebas-neue {

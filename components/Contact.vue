@@ -29,7 +29,7 @@
       </div>
       <div class="flex-shrink-0">
         <div class="flex flex-col min-w-full lg:min-w-lg max-w-xl h-full bg-white p-6 py-12 gap-6">
-          <h2 class="text-5xl text-center md:text-left pb-1 leading-7 font-bebas-neue tracking-wide text-[#2C3930]">Send Us a Message</h2>
+          <h2 class="text-5xl text-center md:text-left pb-1 leading-7 font-bebas-neue tracking-wide text-black">Send Us a Message</h2>
 
           <input
             class="bg-white border border-black w-full text-xl font-light p-2 px-4 focus:appearance-none focus:outline-none"

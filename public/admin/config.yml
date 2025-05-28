@@ -105,6 +105,20 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Featured Post", name: "featured", widget: "boolean", default: false}
 
+  - name: 'reviews'
+    label: 'Reviews'
+    folder: '/content/reviews'
+    extension: 'json'
+    format: 'json'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Client Name', name: 'clientname', widget: 'string' }
+      - { label: 'Client Location', name: 'clientlocation', widget: 'string' }
+
+
   - name: "config"
     label: "Config"
     files:

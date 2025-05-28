@@ -35,6 +35,16 @@ export default defineContentConfig({
         image: z.string(),
         date: z.date()
       })
+    }),
+    review: defineCollection({
+      type: 'page',
+      source: 'blog/*.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        clientname: z.string(),
+        clientlocation: z.string()
+      })
     })
   }
 })

@@ -46,7 +46,7 @@ useSeoMeta({
         <!-- Main Content - Left Column -->
         <div class="lg:col-span-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <BlogPostCard v-for="blogPost in blogPosts" :key="blogPost.id" :id="blogPost.id" :title="blogPost.title"
+            <BlogPostCard v-for="blogPost in recentPosts" :key="blogPost.id" :id="blogPost.id" :title="blogPost.title"
               :date="blogPost.date" :description="blogPost.description" :image="blogPost.image" :path="blogPost.path"
               :tags="blogPost.tags" :meta="blogPost.meta" />
           </div>
@@ -81,31 +81,7 @@ useSeoMeta({
               </div>
             </div>
 
-            <!-- Recent Posts -->
-            <div class="p-4 border border-black/10">
-              <h3 class="text-3xl tracking-wide text-gray-900 mb-4 pb-2 border-b-2 border-[#3F4F44] font-bebas-neue">
-                Recent Posts
-              </h3>
-              <div class="space-y-4">
-                <div v-for="post in recentPosts" :key="post.id" class="group cursor-pointer">
-                  <NuxtLink :to="post.path" class="block">
-                    <div class="flex space-x-3 ">
-                      <img :src="post.image" :alt="post.title"
-                        class="w-16 h-16 object-cover  flex-shrink-0" />
-                      <div class="flex-1 min-w-0">
-                        <h4
-                          class="text-sm font-medium text-gray-900 group-hover:text-[#3F4F44]  transition-colors line-clamp-2">
-                          {{ post.title }}
-                        </h4>
-                        <p class="text-xs text-gray-500 mt-1">
-                          {{ formatSidebarDate(post.date) }}
-                        </p>
-                      </div>
-                    </div>
-                  </NuxtLink>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

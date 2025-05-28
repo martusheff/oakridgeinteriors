@@ -76,8 +76,8 @@ collections:
             fields:
               - { label: Image, name: image, widget: image }
       - file: "content/page/jobs.md"
-        label: "Jobs Page"
-        name: "jobs"
+        label: "Blog Page"
+        name: "blog"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }

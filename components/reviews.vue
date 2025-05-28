@@ -1,5 +1,6 @@
 <script setup lang="ts">
     const { data: reviews } = await useAsyncData(() => queryCollection('reviews').all())
+    console.log(reviews.value)
 </script>
 
 <template>
@@ -15,7 +16,7 @@
 
         </div>
         <div class="flex flex-col md:flex-row px-4 md:px-12 gap-6">
-            <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :title="review.title" :descrition="review.description" :clientname="review.clientname" :clientlocation="review.clientlocation"/>
+            <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :title="review.title" :description="review.description" :clientname="review.clientname" :clientlocation="review.clientlocation"/>
         </div>
         <NuxtLink href="reviews" class=" bg-[#3F4F44] px-8 py-4 text-white text-2xl tracking-wider font-bebas-neue">
             See All Reviews

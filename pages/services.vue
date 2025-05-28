@@ -1,5 +1,13 @@
 <template>
-  <section>
-    <p>This page will be displayed at the /about route.</p>
-  </section>
+  <div class="h-screen">
+    <ToggleButton/>
+  </div>
 </template>
+
+<script lang="ts" setup>
+
+</script>
+
+<style>
+
+</style>

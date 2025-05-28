@@ -29,7 +29,7 @@
 
       </div>
     </div>
-    <div class="text-center bg-[#A27B5C] py-2 text-white font-extralight tracking-wider text-sm uppercase">
+    <div class="text-center bg-[#3F4F44] py-2 text-white font-extralight tracking-wider text-sm uppercase ">
       <p>&copy; 2025 Oakridge Interiors LLC. Website by West Coast Softworks.</p>
     </div>
   </footer>

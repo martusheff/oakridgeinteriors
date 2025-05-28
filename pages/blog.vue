@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { GetAnEstimateCard } from '#components';
-import LowImpactHero from '~/components/LowImpactHero.vue'
 
 
 const { data: blogPage } = await useAsyncData(() => queryCollection('pages').path('/page/blog').first())
@@ -16,6 +14,25 @@ useSeoMeta({
 <template>
   <div class="w-full flex flex-col">
     <LowImpactHero :title="blogPage?.title" :image="blogPage?.herobackground" />
+
+    <!-- Blog Posts Grid -->
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 gap-8">
+        <BlogPostCard
+          v-for="blogPost in blogPosts"
+          :key="blogPost.id"
+          :id="blogPost.id"
+          :title="blogPost.title"
+          :date="blogPost.date"
+          :description="blogPost.description"
+          :image="blogPost.image"
+          :path="blogPost.path"
+          :tags="blogPost.tags"
+          :meta="blogPost.meta"
+        />
+      </div>
+    </div>
+
     <Reviews />
     <GetAnEstimateCard/>
   </div>

@@ -5,7 +5,7 @@
                 <slot />
             </div>
         </div>
-        <div class="hidden sm:flex flex-col justify-center gap-0.5">
+        <div class="hidden md:flex flex-col justify-center gap-0.5">
             <span class="font-bebas-neue text-md leading-none tracking-wider">
                 {{ title }}
             </span>

@@ -1,6 +1,16 @@
 <script setup lang="ts">
-    const { data: reviews } = await useAsyncData(() => queryCollection('reviews').all())
-    console.log(reviews.value)
+
+interface Props {
+  limit?: number;
+}
+const { limit = 12 } = defineProps<Props>();
+
+const { data: reviews } = await useAsyncData('reviews', () => {
+  return queryCollection('reviews').limit(limit).all();
+});
+
+// Log reviews for debugging
+console.log(reviews.value);
 </script>
 
 <template>

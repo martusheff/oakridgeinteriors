@@ -41,7 +41,7 @@ useSeoMeta({
     </div>
 
     <Accolades />
-    <Reviews />
+    <Reviews :limit="3"/>
     <GetAnEstimateCard/>
 
   </div>

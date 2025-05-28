@@ -14,7 +14,7 @@ useSeoMeta({
   <div class="w-full flex flex-col">
     <LowImpactHero :title="contact?.title" :image="contact?.herobackground" />
     <Contact/>
-    <Reviews />
+    <Reviews :limit="3"/>
     
   </div>
 </template>

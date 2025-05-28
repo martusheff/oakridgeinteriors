@@ -35,7 +35,7 @@ import GetAnEstimateCard from '~/components/GetAnEstimateCard.vue';
       </div>
     </div>
     <Accolades/>
-    <Reviews/>
+    <Reviews :limit="3"/>
     <GetAnEstimateCard/>
 
   </section>

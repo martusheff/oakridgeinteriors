@@ -11,9 +11,9 @@ const imageHeights = ref<string[]>([])
 
 const generateRandomHeights = () => {
   if (!gallery.value?.images) return
-  
+
   const heights = ['250px', '300px', '350px', '280px', '380px', '320px', '400px', '270px']
-  imageHeights.value = gallery.value.images.map(() => 
+  imageHeights.value = gallery.value.images.map(() =>
     heights[Math.floor(Math.random() * heights.length)]
   )
 }
@@ -22,7 +22,6 @@ onMounted(() => {
   generateRandomHeights()
 })
 
-console.log(gallery?.value?.images![0])
 useSeoMeta({
   title: gallery.value?.title || 'Gallery',
   description: gallery.value?.description || 'Gallery'
@@ -42,24 +41,17 @@ useSeoMeta({
     <!-- Dynamic Height Masonry Layout -->
     <div v-if="gallery?.images && imageHeights.length" class="masonry-container px-4 max-w-7xl mx-auto">
       <div class="masonry-grid">
-        <div 
-          v-for="(imageItem, index) in gallery.images" 
-          :key="index" 
-          class="masonry-item"
-          :style="{ height: imageHeights[index] }"
-        >
-          <img 
-            :src="imageItem.image!" 
-            :alt="`Gallery image ${index + 1}`"
-            class="w-full h-full object-cover rounded-none  shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105" 
-            loading="lazy" 
-          />
+        <div v-for="(imageItem, index) in gallery.images" :key="index" class="masonry-item"
+          :style="{ height: imageHeights[index] }">
+          <img :src="imageItem.image!" :alt="`Gallery image ${index + 1}`"
+            class="w-full h-full object-cover rounded-none  shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
+            loading="lazy" />
         </div>
       </div>
     </div>
-    <Accolades/>
-    <Reviews/>
-        <GetAnEstimateCard/>
+    <Accolades />
+    <Reviews :limit="3" />
+    <GetAnEstimateCard />
 
   </div>
 </template>

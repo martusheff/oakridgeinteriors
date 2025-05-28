@@ -36,9 +36,9 @@ export default defineContentConfig({
         date: z.date()
       })
     }),
-    review: defineCollection({
-      type: 'page',
-      source: 'blog/*.md',
+    reviews: defineCollection({
+      type: 'data',
+      source: 'reviews/*.json',
       schema: z.object({
         title: z.string(),
         description: z.string(),

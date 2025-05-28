@@ -1,5 +1,9 @@
+<script setup lang="ts">
+    const { data: reviews } = await useAsyncData(() => queryCollection('reviews').all())
+</script>
+
 <template>
-    <div class="flex flex-col gap-12 py-12 md:py-24 px-4 md:px-0 items-center justify-center">
+    <div v-if="reviews" class="flex flex-col gap-12 py-12 md:py-24 px-4 md:px-0 items-center justify-center">
         <div class="w-full flex flex-col items-center justify-center md:max-w-[70vw] mx-auto">
             <p class="text-[#3F4F44] font-bebas-neue tracking-wider text-xl text-center">TESTIMONIALS</p>
             <h2 class="font-bebas-neue tracking-wide text-5xl text-center mb-2">See What Our Customers Have To
@@ -11,17 +15,13 @@
 
         </div>
         <div class="flex flex-col md:flex-row px-4 md:px-12 gap-6">
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-
+            <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :title="review.title" :descrition="review.description" :clientname="review.clientname" :clientlocation="review.clientlocation"/>
         </div>
         <NuxtLink href="reviews" class=" bg-[#3F4F44] px-8 py-4 text-white text-2xl tracking-wider font-bebas-neue">
             See All Reviews
         </NuxtLink>
     </div>
 </template>
-
 
 <style scoped>
 .font-bebas-neue {

@@ -85,7 +85,7 @@ collections:
 
   - name: 'blog'
     label: 'Blog'
-    folder: '/contact/blog'
+    folder: '/content/blog'
     create: true
     slug: "{{slug}}"
     fields:

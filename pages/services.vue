@@ -1,9 +1,9 @@
 <template>
-  <div class="h-screen">
+  <div class="flex flex-col gap-12">
         <LowImpactHero :title="servicesPage?.title" :image="servicesPage?.herobackground" />
 
         <Reviews :limit="3"/>
-
+        <GetAnEstimateCard/>
    </div>
 </template>
 

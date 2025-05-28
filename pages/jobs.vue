@@ -3,16 +3,19 @@ import { GetAnEstimateCard } from '#components';
 import LowImpactHero from '~/components/LowImpactHero.vue'
 
 
-const { data: jobs } = await useAsyncData(() => queryCollection('pages').path('/page/jobs').first())
+const { data: blogPage } = await useAsyncData(() => queryCollection('pages').path('/page/blog').first())
+const { data: blogPosts } = await useAsyncData(() => queryCollection('blog').all())
+
+console.log(blogPosts.value)
 useSeoMeta({
-  title: jobs.value?.title || 'Contact',
-  description: jobs.value?.description || 'Contact'
+  title: blogPage.value?.title || 'Blog',
+  description: blogPage.value?.description || 'Blog'
 })
 </script>
 
 <template>
   <div class="w-full flex flex-col">
-    <LowImpactHero :title="jobs?.title" :image="jobs?.herobackground" />
+    <LowImpactHero :title="blogPage?.title" :image="blogPage?.herobackground" />
     <Reviews />
     <GetAnEstimateCard/>
   </div>

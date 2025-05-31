@@ -8,6 +8,10 @@ const { data: blogPost } = await useAsyncData(`blog-${slug}`, () =>
   queryCollection('blog').path(`/blog/${slug}`).first()
 )
 
+const imageUrls = computed(() => {
+  return blogPost.value?.images?.map(item => item.image) || []
+})
+
 // Handle 404 if post not found
 if (!blogPost.value) {
   throw createError({
@@ -34,18 +38,19 @@ const formatDate = (date: Date | string) => {
 
 <template>
   <div class="w-full">
-    <!-- Hero Image -->
-    <div class="relative h-96 overflow-hidden">
-      <img :src="blogPost?.image" :alt="blogPost?.meta?.imageAlt || blogPost?.title"
-        class="w-full h-full object-cover" />
-    </div>
+        <LowImpactHero :title="blogPost?.title" :image="blogPost?.image" />
+
 
     <!-- Content -->
-    <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <div class="container mx-auto px-4 py-12 max-w-4xl gap-8">
       <!-- Header -->
       <header class="mb-8">
+                  <NuxtLink href="/blog">
+            Back to All Posts
+          </NuxtLink>
         <div class="flex items-center text-sm text-gray-500 mb-4">
-          <span>{{ formatDate(blogPost?.date) }}</span>
+
+          <span>{{ formatDate(blogPost!.date) }}</span>
           <span v-if="blogPost?.meta?.author" class="ml-4">
             by {{ blogPost.meta.author }}
           </span>
@@ -55,15 +60,21 @@ const formatDate = (date: Date | string) => {
           {{ blogPost?.title }}
         </h1>
         
-        <p class="text-xl text-gray-600 leading-relaxed">
+        <p class="text-xl text-gray-600 leading-relaxed ">
           {{ blogPost?.description }}
         </p>
+
+        <img :src="blogPost?.image"/>
       </header>
 
       <!-- Blog Content -->
       <article class="prose prose-lg max-w-none">
-        <ContentRenderer :value="blogPost!.body" />
+        <ContentRenderer :value="blogPost!.body" class="text-lg"/>
       </article>
+
+      <div class="pt-8 lg:pt-12">
+        <Masonry size="small" :images="imageUrls" />
+      </div>
     </div>
   </div>
 </template>

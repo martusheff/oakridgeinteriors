@@ -3,9 +3,26 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 interface Props {
   images: string[]
+  size: 'small' | 'medium' | 'large'
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  size: 'large'
+})
+
+// Computed column classes based on size prop
+const getColumnClasses = () => {
+  switch (props.size) {
+    case 'small':
+      return 'columns-1 sm:columns-2 md:columns-2 lg:columns-3 xl:columns-3'
+    case 'medium':
+      return 'columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5'
+    case 'large':
+      return 'columns-1 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6'
+    default:
+      return 'columns-1 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6'
+  }
+}
 
 // Generate random heights for each image
 const imageHeights = ref<string[]>([])
@@ -118,8 +135,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div v-if="images?.length && imageHeights.length" class="w-full px-4 max-w-7xl mx-auto">
-    <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-6">
+  <div v-if="images?.length && imageHeights.length" class="w-full max-w-7xl mx-auto">
+    <div :class="`${getColumnClasses()} gap-6`">
       <div v-for="(image, index) in images" :key="index" 
         class="inline-block w-full mb-6 break-inside-avoid relative"
         :style="{ height: imageHeights[index] }">
@@ -142,24 +159,24 @@ onUnmounted(() => {
       
       <!-- Close Button -->
       <button @click="closeGallery" 
-        class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition-colors z-10">
+        class="absolute top-4 right-4 text-white text-2xl sm:text-3xl hover:text-gray-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full w-8 h-8 sm:w-auto sm:h-auto sm:bg-transparent flex items-center justify-center">
         ×
       </button>
 
       <!-- Previous Button -->
       <button @click.stop="prevImage" 
-        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl hover:text-gray-300 transition-colors z-10 p-2">
+        class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white text-xl sm:text-2xl hover:text-gray-300 transition-colors z-10 p-1 sm:p-2 bg-black bg-opacity-50 sm:bg-transparent rounded-full">
         ‹
       </button>
 
       <!-- Next Button -->
       <button @click.stop="nextImage" 
-        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl hover:text-gray-300 transition-colors z-10 p-2">
+        class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white text-xl sm:text-2xl hover:text-gray-300 transition-colors z-10 p-1 sm:p-2 bg-black bg-opacity-50 sm:bg-transparent rounded-full">
         ›
       </button>
 
       <!-- Current Image -->
-      <div class="max-w-[90vw] max-h-[90vh] flex items-center justify-center cursor-grab active:cursor-grabbing" 
+      <div class="max-w-[98vw] max-h-[85vh] sm:max-w-[90vw] sm:max-h-[90vh] flex items-center justify-center cursor-grab active:cursor-grabbing px-2 sm:px-0" 
         :class="{ 'cursor-grabbing': isDragging }"
         @click.stop>
         <img :src="images[currentImageIndex]" 
@@ -168,7 +185,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Image Counter -->
-      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
+      <div class="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xs sm:text-sm bg-black bg-opacity-50 px-2 py-1 rounded">
         {{ currentImageIndex + 1 }} / {{ images.length }}
       </div>
     </div>

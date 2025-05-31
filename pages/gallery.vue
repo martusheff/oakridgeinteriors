@@ -20,7 +20,7 @@ const imageUrls = computed(() => {
       </h2>
     </div>
 
-    <Masonry :images="imageUrls" />
+    <Masonry size="large" :images="imageUrls" />
     
     <Accolades />
     <Reviews :limit="3" />

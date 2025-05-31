@@ -9,7 +9,7 @@
           transform your space with our professional services.</p>
         <div class="flex flex-row md:flex-col pt-6 md:pt-8 md:pb-4 gap-4 justify-center md:justify-start">
           <HeaderContactCard title="CALL US 24/7" subtitle="Click To Call Us" icon="heroicons-outline:phone"
-            url="tel:+15035551234">
+            url="tel:+19718038020">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round"
@@ -17,7 +17,7 @@
             </svg>
           </HeaderContactCard>
           <HeaderContactCard title="SEND A MESSAGE" subtitle="Click To Email Us" icon="heroicons-outline:mail"
-            url="mailto:info@example.com">
+            url="mailto:oakridgeinteriors22@gmail.com">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round"

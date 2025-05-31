@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-[#2C3930] text-center">
-    <div class="p-4 flex">
-      <div class="flex-1 flex flex-col">
+    <div class="p-4 flex w-full">
+      <div class="flex-1 flex flex-col w-full items-center">
         <NuxtLink to="/" class="font-bold  transition-opacity rounded invert outline-offset-8 pointer-events-auto">
           <Logo fill="fff"
             class="transition-opacity opacity-95 hover:opacity-100 h-45 w-80 px-2 lg:px-8 object-contain" />
@@ -25,7 +25,7 @@
           </NuxtLink>
         </div>
       </div>
-      <div class="flex-1">
+      <div class="lg:flex flex-1 hidden ">
 
       </div>
     </div>

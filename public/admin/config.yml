@@ -70,6 +70,19 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
           - { label: "Hero Background Image", name: "herobackground", widget: "image" }
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: Title, name: title, widget: "string" }
+              - { label: Description, name: description, widget: "string" }
+              - { label: Image, name: image, widget: image }
+              - label: "Bullet Points"
+                name: "features"
+                widget: "list"
+                max: 5
+                min: 3
+                field: {label: Bullet Point, name: feature, widget: "string"}
       - file: "content/page/gallery.md"
         label: "Gallery Page"
         name: "gallery"
@@ -97,6 +110,7 @@ collections:
     slug: "{{slug}}"
     fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Location (If Applicable)", name: "location", widget: "string" }
           - {
                 label: "URL Slug",
                 name: "url",
@@ -106,7 +120,6 @@ collections:
           - { label: "Description", name: "description", widget: "string" }
           - { label: "Author", name: "author", widget: "string", default: "Joe Konovalov" }
           - { label: "Date", name: "date", widget: "datetime" }
-          - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
           - { label: "Featured Image", name: "image", widget: "image" }
           - { label: "Image Caption", name: "imageAlt", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }

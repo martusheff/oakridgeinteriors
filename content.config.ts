@@ -16,7 +16,19 @@ export default defineContentConfig({
           z.object({
             image: z.string()
           })
-        ).optional()
+        ).optional(),
+        services: z.array(
+          z.object({
+            title: z.string(),
+            description: z.string(),
+            image: z.string(),
+            features: z.array(
+              z.object({
+                feature: z.string()
+              })
+            )
+          })
+        )
       })
     }),
     config: defineCollection({
@@ -31,7 +43,7 @@ export default defineContentConfig({
       type: 'page',
       source: 'blog/*.md',
       schema: z.object({
-        tags: z.array(z.string()),
+        location: z.string().optional(),
         image: z.string(),
         date: z.date(),
         images: z.array(

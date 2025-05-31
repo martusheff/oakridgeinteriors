@@ -4,9 +4,7 @@ import LowImpactHero from '~/components/LowImpactHero.vue'
 
 
 const { data: about } = await useAsyncData(() => queryCollection('pages').path('/page/about').first())
-console.log('Background image:', about.value?.herobackground)
-console.log('Hero image:', about.value?.hero)
-console.log('Title:', about.value?.title)
+
 useSeoMeta({
   title: about.value?.title || 'About',
   description: about.value?.description || 'About our site'

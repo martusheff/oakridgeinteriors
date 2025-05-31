@@ -89,6 +89,11 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
           - { label: "Hero Background Image", name: "herobackground", widget: "image" }
+          - label: "Gallery"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: Image, name: image, widget: image }
 
   - name: 'blog'
     label: 'Blog'

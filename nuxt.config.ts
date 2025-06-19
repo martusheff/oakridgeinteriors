@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxtjs/turnstile',
     '@nuxt/ui',
     'nuxt-gtag',
+    '@formkit/auto-animate'
   ],
 
   turnstile: {

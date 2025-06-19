@@ -53,20 +53,11 @@
                 size="xl" variant="outline" required class="w-full" />
             </UFormField>
             
-            <div class="turnstile-container">
-              <NuxtTurnstile 
-                ref="turnstile" 
-                v-model="turnstileToken"
-                @success="onTurnstileSuccess" 
-                @error="onTurnstileError"
-                @expired="onTurnstileExpired" 
-              />
-            </div>
+            <NuxtTurnstile ref="turnstile" @success="onTurnstileSuccess" />
 
             <button type="submit"
-              class="text-white w-full font-bebas-neue px-6 py-3 text-2xl tracking-wider bg-[#A27B5C] disabled:opacity-50 disabled:cursor-not-allowed"
-              :disabled="isSubmitDisabled">
-              {{ status === 'loading' ? 'Sending...' : 'Submit' }}
+              class="text-white w-full font-bebas-neue px-6 py-3 text-2xl tracking-wider bg-[#A27B5C]">
+              Submit
             </button>
             
             <p v-if="result" :class="status === 'success' ? 'text-green-600' : 'text-red-600'" class="text-center mt-4">
@@ -79,14 +70,9 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref, computed } from 'vue'
+<script setup>
+import { ref } from 'vue'
 import HeaderContactCard from '~/components/HeaderContactCard.vue'
-
-interface Web3FormsResponse {
-  status: number
-  message: string
-}
 
 const form = ref({
   access_key: process.env.WEB3FORMS_ACCESSKEY,
@@ -99,100 +85,51 @@ const form = ref({
 
 const result = ref('')
 const status = ref('')
-const turnstile = ref<any>(null)
-const turnstileToken = ref('')
+const turnstile = ref()
 
-// Computed property to determine if submit should be disabled
-const isSubmitDisabled = computed(() => {
-  return status.value === 'loading' || !turnstileToken.value
-})
-
-// Turnstile event handlers
-const onTurnstileSuccess = (token: string) => {
-  console.log('Turnstile success:', !!token) // Debug log
-  turnstileToken.value = token
-  
-  // Clear any previous captcha error messages
-  if (status.value === 'error' && result.value.includes('CAPTCHA')) {
-    result.value = ''
-    status.value = ''
-  }
-}
-
-const onTurnstileError = (error: any) => {
-  console.log('Turnstile error:', error) // Debug log
-  turnstileToken.value = ''
-  status.value = 'error'
-  result.value = 'CAPTCHA verification failed. Please try again.'
-}
-
-const onTurnstileExpired = () => {
-  console.log('Turnstile expired') // Debug log
-  turnstileToken.value = ''
+const onTurnstileSuccess = (token) => {
+  form.value['cf-turnstile-response'] = token
 }
 
 const submitForm = async () => {
-  // Clear previous messages
-  result.value = ''
-  status.value = ''
-
-  // Double-check Turnstile token
-  if (!turnstileToken.value) {
-    status.value = 'error'
-    result.value = 'Please complete the CAPTCHA verification before submitting.'
-    return
-  }
-
+  result.value = 'Please wait...'
+  
   try {
-    status.value = 'loading'
-    
-    const response = await $fetch<Web3FormsResponse>('https://api.web3forms.com/submit', {
+    const response = await $fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      body: {
-        ...form.value,
-        'cf-turnstile-response': turnstileToken.value,
-      },
+      headers: { 'Content-Type': 'application/json' },
+      body: form.value,
     })
 
+    console.log(response)
+
     result.value = response.message
+
     if (response.status === 200) {
       status.value = 'success'
       
-      // Reset form
+      // Only reset form on success
       form.value.name = ''
       form.value.phone = ''
       form.value.email = ''
       form.value.message = ''
-
-      // Reset Turnstile token and widget
-      turnstileToken.value = ''
-      if (turnstile.value?.reset) {
-        turnstile.value.reset()
-      }
     } else {
+      console.log(response)
       status.value = 'error'
-      // Don't reset turnstile on API error, let user retry
     }
   } catch (error) {
-    console.error('Form submission error:', error)
+    console.log(error)
     status.value = 'error'
-    result.value = 'Something went wrong! Please try again.'
-    // Don't reset turnstile on network error, let user retry
+    result.value = 'Something went wrong!'
   } finally {
-    // Clear messages after timeout
-    if (status.value !== 'success') {
-      setTimeout(() => {
-        if (status.value !== 'loading') { // Don't clear if still loading
-          result.value = ''
-          status.value = ''
-        }
-      }, 5000)
-    } else {
-      setTimeout(() => {
-        result.value = ''
-        status.value = ''
-      }, 10000)
-    }
+    // Always reset turnstile (for security)
+    turnstile.value?.reset()
+
+    // Clear result and status after 5 seconds
+    setTimeout(() => {
+      result.value = ''
+      status.value = ''
+    }, 5000)
   }
 }
 </script>
@@ -200,11 +137,5 @@ const submitForm = async () => {
 <style scoped>
 .font-bebas-neue {
   font-family: 'Bebas Neue', sans-serif;
-}
-
-.turnstile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 </style>

@@ -1,6 +1,5 @@
 export default defineAppConfig({
   ui: {
-    strategy: 'override',
     input: {
       slots: {
         base: 'border-1 border-[#2C3930] rounded-none',

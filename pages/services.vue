@@ -5,19 +5,12 @@
       :image="servicesPage?.herobackground" 
     />
 
-    <!-- Page Introduction -->
-    <div class="container mx-auto px-4 sm:px-6 max-w-4xl text-center">
-      <p class="text-lg text-gray-600 mb-12">
-        {{ servicesPageMock.description }}
-      </p>
-    </div>
-
     <!-- Dynamic Services -->
     <div 
-      v-for="(service, index) in servicesPageMock.services" 
+      v-for="(service, index) in servicesPage?.services" 
       :key="index"
       class="w-full"
-      :class="index % 2 === 0 ? 'bg-gray-50' : 'bg-white'"
+      :class="index % 2 === 0 ? 'bg-white' : 'bg-[#DCD7C9]/40'"
     >
       <div class="container mx-auto px-4 sm:px-6 max-w-6xl py-12 md:py-16">
         <div 
@@ -27,7 +20,7 @@
           <div class="w-full md:w-1/2">
             <NuxtImg 
               :src="service.image" 
-              class="w-full h-64 md:h-96 object-cover rounded-lg shadow-md"
+              class="w-full h-64 md:h-96 object-cover  shadow-md"
               :alt="service.title"
             />
           </div>
@@ -57,7 +50,7 @@
 
     <!-- Our Craftsmanship Process -->
     <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
-      <div class="bg-gray-50 rounded-xl p-8 sm:p-12">
+      <div class="bg-gray-50 p-8 sm:p-12">
         <h2 class="text-3xl font-bebas-neue text-center tracking-wide text-gray-900 mb-8">
           Our Craftsmanship Process
         </h2>
@@ -67,7 +60,7 @@
             :key="'step-'+index"
             class="flex items-start"
           >
-            <div class="bg-primary-500 text-white rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">
+            <div class="bg-primary-500 font-bebas-neue text-4xl text-[#3F4F44] rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">
               {{ index + 1 }}
             </div>
             <div>
@@ -93,43 +86,6 @@
 
 const { data: servicesPage } = await useAsyncData(() => queryCollection('pages').path('/page/services').first())
 
-const servicesPageMock = {
-  title: "Finish Carpentry Services",
-  description: "Masterful finish carpentry that elevates your space. From custom millwork to precision installations, we bring craftsmanship to every detail.",
-  herobackground: "/placeholder-carpentry-hero.jpg",
-  services: [
-    {
-      title: "Crown Molding & Trim",
-      description: "Elevate your ceilings with custom crown molding installations. We specialize in seamless joints and perfect transitions, offering a range of profiles from simple modern to ornate traditional styles.",
-      image: "/placeholder-crown-molding.jpg",
-      features: [
-        "Custom profile design",
-        "Seamless corner joints",
-        "Paint-grade or stain-grade materials"
-      ]
-    },
-    {
-      title: "Custom Cabinetry",
-      description: "Built-to-order storage solutions designed for your specific space and needs. From bookcases to entertainment centers, we create functional pieces with exceptional craftsmanship.",
-      image: "/placeholder-custom-cabinets.jpg",
-      features: [
-        "Built-in shelving units",
-        "Entertainment centers",
-        "Custom closet systems"
-      ]
-    },
-    {
-      title: "Wainscoting & Paneling",
-      description: "Transform your walls with elegant wainscoting and paneling. We offer various styles including beadboard, raised panel, and flat panel designs to complement your interior aesthetic.",
-      image: "/placeholder-wainscoting.jpg",
-      features: [
-        "Beadboard installation",
-        "Custom panel heights",
-        "Chair rail and cap molding"
-      ]
-    }
-  ]
-}
 
 const processSteps = [
   {
@@ -155,8 +111,8 @@ const processSteps = [
 ]
 
 useSeoMeta({
-  title: servicesPageMock.title,
-  description: servicesPageMock.description
+  title: servicesPage?.title,
+  description: servicesPage?.description
 })
 </script>
 

@@ -15,7 +15,7 @@
 
     <!-- Navigation and Contact Section -->
     <div :class="[
-      'flex-1 flex flex-col w-full h-full transition-all duration-300 ease-in-out',
+      'flex-1 flex overflow-x-hidden flex-col w-full h-full transition-all duration-300 ease-in-out',
       collapsed ? 'min-h-20 h-20' : 'min-h-40 h-40'
     ]">
       <!-- Top Contact Info -->
@@ -70,7 +70,7 @@
         <div class="flex w-full items-center justify-end">
           <!-- Top Contact Info -->
           <div :class="[
-            'flex-1 flex gap-8 w-full items-center justify-start px-6 transition-all duration-300 ease-in-out',
+            'flex-1 flex w-full items-center justify-around px-0 transition-all duration-300 ease-in-out',
             collapsed ? ' lg:hidden' : 'max-h-20 opacity-100 hidden'
           ]">
             <!-- Phone -->
@@ -237,7 +237,7 @@ const navItems = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/reviews', label: 'Reviews' },
-  { href: '/blog', label: 'Blog' },
+  // { href: '/blog', label: 'Blog' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' }
 ]

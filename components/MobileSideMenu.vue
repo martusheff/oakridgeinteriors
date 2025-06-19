@@ -16,8 +16,8 @@
       enter-to-class="translate-x-0" leave-active-class="transition-transform duration-200 ease-in"
       leave-from-class="translate-x-0" leave-to-class="translate-x-full">
       <div v-if="isOpen"
-        class="fixed bg-white shadow-2xl lg:hidden flex flex-col"
-        style="z-index: 9999; top: 0; right: 0; width: 320px; max-width: 85vw; height: 100vh;">
+        class="fixed bg-white shadow-2xl lg:hidden flex flex-col mobile-menu-height"
+        style="z-index: 9999; top: 0; right: 0; width: 320px; max-width: 85vw;">
         
         <!-- Mobile Menu Header - Fixed at top -->
         <div class="flex items-center justify-between p-6 border-b border-black/10 flex-shrink-0">
@@ -155,5 +155,18 @@ onUnmounted(() => {
 <style scoped>
 .font-bebas-neue {
   font-family: 'Bebas Neue', sans-serif;
+}
+
+.mobile-menu-height {
+  /* Modern approach: Use dynamic viewport height units */
+  height: 100dvh; /* Dynamic viewport height - adjusts for browser UI */
+  
+  /* Fallback for older browsers that don't support dvh */
+  height: 100vh;
+  
+  /* Use @supports to apply dvh only when supported */
+  @supports (height: 100dvh) {
+    height: 100dvh;
+  }
 }
 </style>

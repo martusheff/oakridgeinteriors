@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt',
-    '@nuxtjs/turnstile'
+    '@nuxtjs/turnstile',
+    '@nuxt/ui'
   ],
 
   turnstile: {
@@ -25,4 +26,9 @@ export default defineNuxtConfig({
       secretKey: process.env.TURNSTYLE_SECRETKEY,
     },
   },
+
+  css: ['~/assets/css/main.css'],
+
+  
+
 })

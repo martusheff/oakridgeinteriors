@@ -2,7 +2,7 @@
     <a :href="url">
         <div class="flex gap-3 transition-all duration-300">
             <div class="flex items-center justify-center p-2 bg-[#DCD7C9]/50 rounded-full">
-                <div class="w-7 h-7 flex items-center justify-center p-1 text-black">
+                <div class="w-7 h-7 flex items-center justify-center p-1 ">
                     <slot />
                 </div>
             </div>
@@ -10,7 +10,7 @@
                 <span class="font-bebas-neue text-md leading-none tracking-wider">
                     {{ title }}
                 </span>
-                <p class="text-sm font-extralight leading-none tracking hover:text-secondary transition-colors">
+                <p class="text-sm font-extralight leading-none tracking  transition-colors">
                     {{ subtitle }}
                 </p>
             </div>

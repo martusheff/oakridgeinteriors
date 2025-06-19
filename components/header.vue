@@ -29,7 +29,7 @@
         transitionDelay: collapsed ? '0ms' : '50ms'
       }">
         <!-- Phone -->
-        <HeaderContactCard title="CALL US 24/7" subtitle="Click To Call Us" icon="heroicons-outline:phone"
+        <HeaderContactCard class="text-black" title="CALL US 24/7" subtitle="Click To Call Us" icon="heroicons-outline:phone"
           url="tel:+19718038020">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="size-6">
@@ -38,7 +38,7 @@
           </svg>
         </HeaderContactCard>
         <!-- Email -->
-        <HeaderContactCard title="SEND A MESSAGE" subtitle="Click To Email Us" icon="heroicons-outline:mail"
+        <HeaderContactCard class="text-black" title="SEND A MESSAGE" subtitle="Click To Email Us" icon="heroicons-outline:mail"
           url="mailto:oakridgeinteriors22@gmail.com">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="size-6">
@@ -47,7 +47,7 @@
           </svg>
         </HeaderContactCard>
         <!-- Location -->
-        <HeaderContactCard title="LOCATION" subtitle="Willamette Valley" icon="heroicons-outline:map"
+        <HeaderContactCard class="text-black" title="LOCATION" subtitle="Willamette Valley" icon="heroicons-outline:map"
           url="https://www.google.com/maps/search/?api=1&query=Willamette+Valley,+OR">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="size-6">
@@ -87,7 +87,7 @@
             transitionDelay: collapsed ? '100ms' : '0ms'
           }">
             <!-- Phone -->
-            <HeaderContactCard title="CALL US 24/7" subtitle="Click To Call Us" icon="heroicons-outline:phone"
+            <HeaderContactCard class="text-black"  title="CALL US 24/7" subtitle="Click To Call Us" icon="heroicons-outline:phone"
               url="tel:+19718038020">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="size-6">
@@ -96,7 +96,7 @@
               </svg>
             </HeaderContactCard>
             <!-- Email -->
-            <HeaderContactCard title="SEND A MESSAGE" subtitle="Click To Email Us" icon="heroicons-outline:mail"
+            <HeaderContactCard class="text-black"  title="SEND A MESSAGE" subtitle="Click To Email Us" icon="heroicons-outline:mail"
               url="mailto:oakridgeinteriors22@gmail.com">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="size-6">
@@ -105,7 +105,7 @@
               </svg>
             </HeaderContactCard>
             <!-- Location -->
-            <HeaderContactCard title="LOCATION" subtitle="Willamette Valley" icon="heroicons-outline:map"
+            <HeaderContactCard class="text-black"  title="LOCATION" subtitle="Willamette Valley" icon="heroicons-outline:map"
               url="https://www.google.com/maps/search/?api=1&query=Willamette+Valley,+OR">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="size-6">

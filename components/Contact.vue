@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="flex-shrink-0">
-        <div class="flex flex-col  max-w-xl h-full bg-white p-6 py-12 gap-6">
+        <div class="flex flex-col max-w-xl h-full bg-white p-6 py-12 gap-6">
           <h2 class="text-5xl text-center md:text-left pb-1 font-bebas-neue tracking-wide text-black">Send Us a Message</h2>
           <form @submit.prevent="submitForm" class="space-y-6">
             <input
@@ -52,11 +52,11 @@
             />
             <textarea
               v-model="form.message"
-              class="bg-white border border-black w-full text-xl font-light p-2 px-4 focus:appearance-none focus:outline-none"
+              class="bg-white border border-black w-full text-xl font-light p-2 px-4 focus:appearance-none focus:outline-none min-h-[150px]"
               placeholder="Write a message..."
               required
             />
-                  <NuxtTurnstile class=""/>
+            <NuxtTurnstile ref="turnstile" class=""/>
 
             <button
               type="submit"
@@ -97,17 +97,39 @@ const form = ref({
 
 const result = ref('')
 const status = ref('')
+const turnstile = ref<any>(null) // Use 'any' to bypass TypeScript error
 
 const submitForm = async () => {
+  // Check if Turnstile is completed
+  const turnstileResponse = turnstile.value?.getResponse()
+  if (!turnstileResponse) {
+    status.value = 'error'
+    result.value = 'Please complete the CAPTCHA challenge.'
+    setTimeout(() => {
+      result.value = ''
+      status.value = ''
+    }, 5000)
+    return
+  }
+
   try {
     status.value = 'loading'
     const response = await $fetch<Web3FormsResponse>('https://api.web3forms.com/submit', {
       method: 'POST',
-      body: form.value,
+      body: {
+        ...form.value,
+        'cf-turnstile-response': turnstileResponse,
+      },
     })
     result.value = response.message
     if (response.status === 200) {
       status.value = 'success'
+      // Reset form only on successful submission
+      form.value.name = ''
+      form.value.phone = ''
+      form.value.email = ''
+      form.value.source = ''
+      form.value.message = ''
     } else {
       status.value = 'error'
     }
@@ -115,13 +137,6 @@ const submitForm = async () => {
     status.value = 'error'
     result.value = 'Something went wrong! Please try again.'
   } finally {
-    // Reset form after submission
-    form.value.name = ''
-    form.value.phone = ''
-    form.value.email = ''
-    form.value.source = ''
-    form.value.message = ''
-
     // Clear result and status after 5 seconds
     setTimeout(() => {
       result.value = ''

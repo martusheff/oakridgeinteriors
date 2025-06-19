@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt',
     '@nuxtjs/turnstile',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    'nuxt-gtag',
   ],
 
   turnstile: {
@@ -28,7 +29,9 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
-
+  gtag: {
+    id: 'G-NKXPF3FRL9'
+  }
   
 
 })

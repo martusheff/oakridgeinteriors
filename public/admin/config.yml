@@ -43,26 +43,6 @@ collections:
           - { label: "Hero Background Image", name: "herobackground", widget: "image" }
           - { label: "CTA Label", name: "herocta", widget: "string" }
           - { label: "CTA URL", name: "heroctaurl", widget: "string" }
-      - file: "content/page/reviews.md"
-        label: "Reviews Page"
-        name: "reviews"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Hero Image", name: "hero", widget: "image" }
-          - { label: "Hero Background Image", name: "herobackground", widget: "image" }
-          - { label: "CTA Label", name: "herocta", widget: "string" }
-          - { label: "CTA URL", name: "heroctaurl", widget: "string" }
-      - file: "content/page/contact.md"
-        label: "Contact Page"
-        name: "contact"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Hero Image", name: "hero", widget: "image" }
-          - { label: "Hero Background Image", name: "herobackground", widget: "image" }
-          - { label: "CTA Label", name: "herocta", widget: "string" }
-          - { label: "CTA URL", name: "heroctaurl", widget: "string" }
       - file: "content/page/services.md"
         label: "Services Page"
         name: "services"
@@ -83,6 +63,16 @@ collections:
                 max: 5
                 min: 3
                 field: {label: Bullet Point, name: feature, widget: "string"}
+      - file: "content/page/reviews.md"
+        label: "Reviews Page"
+        name: "reviews"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Hero Image", name: "hero", widget: "image" }
+          - { label: "Hero Background Image", name: "herobackground", widget: "image" }
+          - { label: "CTA Label", name: "herocta", widget: "string" }
+          - { label: "CTA URL", name: "heroctaurl", widget: "string" }
       - file: "content/page/gallery.md"
         label: "Gallery Page"
         name: "gallery"
@@ -95,40 +85,50 @@ collections:
             widget: "list"
             fields:
               - { label: Image, name: image, widget: image }
-      - file: "content/page/jobs.md"
-        label: "Blog Page"
-        name: "blog"
+      - file: "content/page/contact.md"
+        label: "Contact Page"
+        name: "contact"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
+          - { label: "Hero Image", name: "hero", widget: "image" }
           - { label: "Hero Background Image", name: "herobackground", widget: "image" }
+          - { label: "CTA Label", name: "herocta", widget: "string" }
+          - { label: "CTA URL", name: "heroctaurl", widget: "string" }
+      # - file: "content/page/jobs.md"
+      #   label: "Blog Page"
+      #   name: "blog"
+      #   fields:
+      #     - { label: "Title", name: "title", widget: "string" }
+      #     - { label: "Description", name: "description", widget: "text" }
+      #     - { label: "Hero Background Image", name: "herobackground", widget: "image" }
 
-  - name: 'blog'
-    label: 'Blog'
-    folder: '/content/blog'
-    create: true
-    slug: "{{slug}}"
-    fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Location (If Applicable)", name: "location", widget: "string" }
-          - {
-                label: "URL Slug",
-                name: "url",
-                widget: "string",
-                hint: 'Specify where the page will be written to. If you use "Blog Post", the post will be accessible from "blog/blog-post"',
-            }
-          - { label: "Description", name: "description", widget: "string" }
-          - { label: "Author", name: "author", widget: "string", default: "Joe Konovalov" }
-          - { label: "Date", name: "date", widget: "datetime" }
-          - { label: "Featured Image", name: "image", widget: "image" }
-          - { label: "Image Caption", name: "imageAlt", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-          - { label: "Featured Post", name: "featured", widget: "boolean", default: false}
-          - label: "Images"
-            name: "images"
-            widget: "list"
-            fields:
-              - { label: Image, name: image, widget: image }
+  # - name: 'blog'
+  #   label: 'Blog'
+  #   folder: '/content/blog'
+  #   create: true
+  #   slug: "{{slug}}"
+  #   fields:
+  #         - { label: "Title", name: "title", widget: "string" }
+  #         - { label: "Location (If Applicable)", name: "location", widget: "string" }
+  #         - {
+  #               label: "URL Slug",
+  #               name: "url",
+  #               widget: "string",
+  #               hint: 'Specify where the page will be written to. If you use "Blog Post", the post will be accessible from "blog/blog-post"',
+  #           }
+  #         - { label: "Description", name: "description", widget: "string" }
+  #         - { label: "Author", name: "author", widget: "string", default: "Joe Konovalov" }
+  #         - { label: "Date", name: "date", widget: "datetime" }
+  #         - { label: "Featured Image", name: "image", widget: "image" }
+  #         - { label: "Image Caption", name: "imageAlt", widget: "string" }
+  #         - { label: "Body", name: "body", widget: "markdown" }
+  #         - { label: "Featured Post", name: "featured", widget: "boolean", default: false}
+  #         - label: "Images"
+  #           name: "images"
+  #           widget: "list"
+  #           fields:
+  #             - { label: Image, name: image, widget: image }
 
   - name: 'reviews'
     label: 'Reviews'
@@ -142,6 +142,19 @@ collections:
       - { label: 'Client Name', name: 'clientname', widget: 'string' }
       - { label: 'Client Location', name: 'clientlocation', widget: 'string' }
 
+
+      - file: "content/page/gallery.md"
+        label: "Gallery Page"
+        name: "gallery"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Hero Background Image", name: "herobackground", widget: "image" }
+          - label: "Gallery"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: Image, name: image, widget: image }
 
   - name: "config"
     label: "Config"

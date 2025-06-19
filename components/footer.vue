@@ -29,7 +29,7 @@
 
       </div> -->
     </div>
-    <div class="text-center bg-[#3F4F44] py-2 text-white font-extralight tracking-wider text-sm uppercase ">
+    <div class="text-center bg-[#3F4F44] py-2 text-white font-light tracking-wider text-sm uppercase ">
       <p>&copy; 2025 Oakridge Interiors LLC</p>
     </div>
   </footer>

@@ -165,13 +165,13 @@ onUnmounted(() => {
 
       <!-- Previous Button -->
       <button @click.stop="prevImage" 
-        class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white text-xl sm:text-2xl hover:text-gray-300 transition-colors z-10 p-1 sm:p-2 bg-black bg-opacity-50 sm:bg-transparent rounded-full">
+        class="absolute left-3 sm:right-4 leading-0  py-6 pb-7 px-8 bottom-1/30 bg-transparent border border-white transform -translate-y-1/2 text-white text-2xl sm:text-4xl hover:text-gray-300 transition-colors z-10 p-1 sm:p-2 flex items-center justify-center">
         ‹
       </button>
 
       <!-- Next Button -->
       <button @click.stop="nextImage" 
-        class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white text-xl sm:text-2xl hover:text-gray-300 transition-colors z-10 p-1 sm:p-2 bg-black bg-opacity-50 sm:bg-transparent rounded-full">
+        class="absolute right-3 sm:right-4 leading-0  py-6 pb-7 px-8 bottom-1/30 bg-transparent border border-white transform -translate-y-1/2 text-white text-2xl sm:text-4xl hover:text-gray-300 transition-colors z-10 p-1 sm:p-2 flex items-center justify-center">
         ›
       </button>
 

@@ -37,7 +37,7 @@
                 :key="i"
                 class="flex items-start"
               >
-                <svg class="h-5 w-5 text-primary-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-5 w-5  mr-2 mt-0.5 text-[#3F4F44]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>{{ feature }}</span>
@@ -60,7 +60,7 @@
             :key="'step-'+index"
             class="flex items-start"
           >
-            <div class="bg-primary-500 font-bebas-neue text-4xl text-[#3F4F44] rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">
+            <div class="bg-primary-500 font-bebas-neue text-4xl text-[#3F4F44] bg-transparent rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">
               {{ index + 1 }}
             </div>
             <div>

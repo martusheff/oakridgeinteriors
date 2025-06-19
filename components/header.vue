@@ -66,8 +66,8 @@
         <nav class="hidden lg:flex items-center space-x-8 px-12">
           <div v-for="item in navItems" :key="item.label" class="relative group">
             <NuxtLink :to="item.href"
-              class="text-lg transition-colors hover:bg-transparent hover:text-secondary relative"
-              :class="{ 'text-[#3F4F44]': isActive(item.href) }">
+              class="text-lg transition-colors  hover:bg-transparent hover:text-[#3F4F44] relative"
+              :class="isActive(item.href) ? 'text-[#3F4F44]':  'text-black'">
               {{ item.label }}
               <span
                 class="absolute bottom-0 left-0 w-full h-0.5 bg-[#3F4F44] transition-transform duration-300 ease-out origin-left"

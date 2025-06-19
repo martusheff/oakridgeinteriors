@@ -1,9 +1,9 @@
 <template>
   <div class="">
-    <div class="flex flex-col md:flex-row gap-8 w-full bg-[#2C3930] p-8 py-16 md:p-24 justify-around">
-      <div class="flex-1 text-white lg:max-w-lg md:py-12 flex flex-col">
-        <h2 class="text-4xl w-full text-center lg:text-left pb-1 leading-7 font-bebas-neue tracking-wider">Get In Touch With</h2>
-        <h2 class="text-6xl w-full text-center lg:text-left font-bebas-neue tracking-wide">OAKRIDGE INTERIORS</h2>
+    <div class="flex flex-col md:flex-row gap-8 w-full bg-[#2C3930] p-0 lg:p-8 py-16 md:p-24 justify-around">
+      <div class="flex-1 px-4 text-white lg:max-w-lg md:py-12 flex flex-col">
+        <h2 class="text-3xl w-full text-center lg:text-left pb-1 leading-7 font-bebas-neue tracking-wider">Get In Touch With</h2>
+        <h2 class="text-5xl w-full text-center lg:text-left font-bebas-neue tracking-wide">OAKRIDGE INTERIORS</h2>
         <p class="text-2xl text-center md:text-left font-extralight leading-snug text-white pt-2">
           Our team is ready to discuss your needs, provide a free consultation, and offer expert guidance to bring your
           vision to life. Contact us today and let us transform your space with our professional services.

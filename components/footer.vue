@@ -7,7 +7,7 @@
             class="transition-opacity opacity-95 hover:opacity-100 h-45 w-90 px-2 lg:px-8 object-contain" />
 
         </NuxtLink>
-        <div class="flex  text-white justify-between mx-12 gap-2  tracking-wider text-lg font-extralight">
+        <div class="flex  text-white justify-between mx-12 gap-0 md:gap-4  tracking-wider text-lg font-extralight">
           <NuxtLink to="/" :class="navButton">
             Home
           </NuxtLink>

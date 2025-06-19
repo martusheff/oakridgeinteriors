@@ -22,7 +22,7 @@
       </div>
       <div class="flex-shrink-0">
         <div class="flex flex-col  max-w-xl h-full bg-white p-6 py-12 gap-6">
-          <h2 class="text-5xl text-center md:text-left pb-1 leading-7 font-bebas-neue tracking-wide text-black">Send Us a Message</h2>
+          <h2 class="text-5xl text-center md:text-left pb-1 font-bebas-neue tracking-wide text-black">Send Us a Message</h2>
           <form @submit.prevent="submitForm" class="space-y-6">
             <input
               type="text"

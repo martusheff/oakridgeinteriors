@@ -2,8 +2,7 @@
   <div class="">
     <div class="flex flex-col md:flex-row gap-8 w-full bg-[#2C3930] p-8 py-16 md:p-24 justify-around">
       <div class="flex-1 text-white lg:max-w-lg md:py-12 flex flex-col">
-        <h2 class="text-4xl w-full text-center lg:text-left pb-1 leading-7 font-bebas-neue tracking-wider">Get In Touch
-          With</h2>
+        <h2 class="text-4xl w-full text-center lg:text-left pb-1 leading-7 font-bebas-neue tracking-wider">Get In Touch With</h2>
         <h2 class="text-6xl w-full text-center lg:text-left font-bebas-neue tracking-wide">OAKRIDGE INTERIORS</h2>
         <p class="text-2xl text-center md:text-left font-extralight leading-snug text-white pt-2">
           Our team is ready to discuss your needs, provide a free consultation, and offer expert guidance to bring your
@@ -29,41 +28,54 @@
         </div>
       </div>
       <div class="flex-shrink-0">
-        <div class="flex flex-col max-w-xl h-full bg-white p-6 py-12 gap-6">
-          <h2 class="text-5xl text-center md:text-left pb-1 font-bebas-neue tracking-wide text-black">Send Us a Message
-          </h2>
-          <form @submit.prevent="submitForm" class="space-y-6">
-            <UFormField label="Name" required>
-              <UInput v-model="form.name" placeholder="Enter your full name" icon="i-lucide-user" size="xl"
-                variant="outline" required class="w-full rounded-none" />
-            </UFormField>
+        <div class="flex flex-col min-w-full lg:min-w-lg max-w-xl h-full bg-white p-6 py-12 gap-6">
+          <template v-if="status !== 'success'">
+            <h2 class="text-5xl text-center md:text-left pb-1 font-bebas-neue tracking-wide text-black">Send Us a Message</h2>
+            <form @submit.prevent="submitForm" class="space-y-6">
+              <UFormField label="Name" required>
+                <UInput v-model="form.name" placeholder="Enter your full name" icon="i-lucide-user" size="xl"
+                  variant="outline" required class="w-full rounded-none" />
+              </UFormField>
 
-            <UFormField label="Phone" required>
-              <UInput v-model="form.phone" type="tel" placeholder="Enter your phone number" icon="i-lucide-phone"
-                size="xl" variant="outline" required class="w-full" />
-            </UFormField>
+              <UFormField label="Phone" required>
+                <UInput v-model="form.phone" type="tel" placeholder="Enter your phone number" icon="i-lucide-phone"
+                  size="xl" variant="outline" required class="w-full" />
+              </UFormField>
 
-            <UFormField label="Email" required class="">
-              <UInput v-model="form.email" type="email" placeholder="Enter your email address" icon="i-lucide-mail"
-                size="xl" variant="outline" required class="w-full" />
-            </UFormField>
+              <UFormField label="Email" required class="">
+                <UInput v-model="form.email" type="email" placeholder="Enter your email address" icon="i-lucide-mail"
+                  size="xl" variant="outline" required class="w-full" />
+              </UFormField>
 
-            <UFormField label="Message" required>
-              <UTextarea v-model="form.message" placeholder="Tell us about your project or ask any questions..." :rows=5
-                size="xl" variant="outline" required class="w-full" />
-            </UFormField>
-            
-            <NuxtTurnstile ref="turnstile" @success="onTurnstileSuccess" />
+              <UFormField label="Message" required>
+                <UTextarea v-model="form.message" placeholder="Tell us about your project or ask any questions..." :rows=5
+                  size="xl" variant="outline" required class="w-full" />
+              </UFormField>
+              
+              <NuxtTurnstile ref="turnstile" @success="onTurnstileSuccess" />
 
-            <button type="submit"
-              class="text-white w-full font-bebas-neue px-6 py-3 text-2xl tracking-wider bg-[#A27B5C]">
-              Submit
-            </button>
-            
-            <p v-if="result" :class="status === 'success' ? 'text-green-600' : 'text-red-600'" class="text-center mt-4">
-              {{ result }}
-            </p>
-          </form>
+              <button type="submit"
+                class="text-white w-full font-bebas-neue px-6 py-3 text-2xl tracking-wider bg-[#A27B5C]">
+                Submit
+              </button>
+              
+              <p v-if="result && status === 'error'" class="text-red-600 text-center mt-4">
+                {{ result }}
+              </p>
+            </form>
+          </template>
+          
+          <template v-else>
+            <div class="flex flex-col h-full items-center justify-center text-center p-4">
+              <h2 class="text-4xl font-bebas-neue tracking-wide text-black">Thank You!</h2>
+              <h3 class="text-2xl font-bebas-neue tracking-wide text-[#A27B5C] mb-4">Your Message Has Been Sent</h3>
+              <p class="text-gray-700 mb-6">We've received your message and will get back to you soon.</p>
+              <button @click="resetForm"
+                class="text-white font-bebas-neue px-6 py-3 text-2xl tracking-wider bg-[#A27B5C] hover:bg-[#8a6a4f] transition-colors">
+                Send Another Message
+              </button>
+            </div>
+          </template>
         </div>
       </div>
     </div>
@@ -74,20 +86,32 @@
 import { ref } from 'vue'
 import HeaderContactCard from '~/components/HeaderContactCard.vue'
 
-const form = ref({
-  access_key: process.env.WEB3FORMS_ACCESSKEY,
+const defaultForm = {
+  access_key: "b3487db3-fda2-4c3d-88a1-ce4d71c0fc18",
   subject: 'New Submission from Oakridge Interiors',
   name: '',
   phone: '',
   email: '',
   message: '',
-})
+  'cf-turnstile-response': ''
+}
 
+const form = ref({ ...defaultForm })
 const result = ref('')
 const status = ref('')
+const turnstile = ref()
 
 const onTurnstileSuccess = (token) => {
   form.value['cf-turnstile-response'] = token
+}
+
+const resetForm = () => {
+  form.value = { ...defaultForm }
+  status.value = ''
+  result.value = ''
+  if (turnstile.value) {
+    turnstile.value.reset()
+  }
 }
 
 const submitForm = async () => {
@@ -100,32 +124,21 @@ const submitForm = async () => {
       body: form.value,
     })
 
+    console.log(response)
 
-    result.value = response.message
-
-    if (response.status === 200) {
+    if (response.success) {
       status.value = 'success'
-      
-      // Only reset form on success
-      form.value.name = ''
-      form.value.phone = ''
-      form.value.email = ''
-      form.value.message = ''
+      result.value = response.message
     } else {
       status.value = 'error'
+      result.value = response.message || 'Submission failed. Please try again.'
+      turnstile.value?.reset()
     }
   } catch (error) {
+    console.log(error)
     status.value = 'error'
-    result.value = 'Something went wrong!'
-  } finally {
-    // Always reset turnstile (for security)
+    result.value = 'Something went wrong! Please try again.'
     turnstile.value?.reset()
-
-    // Clear result and status after 5 seconds
-    setTimeout(() => {
-      result.value = ''
-      status.value = ''
-    }, 5000)
   }
 }
 </script>

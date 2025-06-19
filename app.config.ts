@@ -1,16 +1,15 @@
 export default defineAppConfig({
-  ui: {
-    input: {
-      slots: {
-        base: 'border-1 border-[#2C3930] rounded-none',
-        focused: 'border-[#2C3930] ring-1 ring-[#2C3930]'
-      }
-    },
-    textarea: {
-      slots: {
-        base: 'border-1 border-[#2C3930] rounded-none',
-        focused: 'border-[#2C3930] ring-1 ring-[#2C3930]'
-      }
+    ui: {
+ 
+        input: {
+            slots: {
+                base: 'border-0 rounded-none',
+            }
+        },
+        textarea: {
+            slots: {
+                base: 'border-0 rounded-none',
+            }
+        }
     }
-  }
 })

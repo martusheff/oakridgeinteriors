@@ -16,10 +16,11 @@
       enter-to-class="translate-x-0" leave-active-class="transition-transform duration-200 ease-in"
       leave-from-class="translate-x-0" leave-to-class="translate-x-full">
       <div v-if="isOpen"
-        class="fixed bg-white shadow-2xl lg:hidden overflow-y-auto"
+        class="fixed bg-white shadow-2xl lg:hidden flex flex-col"
         style="z-index: 9999; top: 0; right: 0; width: 320px; max-width: 85vw; height: 100vh;">
-        <!-- Mobile Menu Header -->
-        <div class="flex items-center justify-between p-6 border-b border-black/10">
+        
+        <!-- Mobile Menu Header - Fixed at top -->
+        <div class="flex items-center justify-between p-6 border-b border-black/10 flex-shrink-0">
           <h2 class="text-xl font-bebas-neue tracking-wider text-[#2C3930]">Menu</h2>
           <button @click="$emit('close')"
             class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors">
@@ -30,8 +31,8 @@
           </button>
         </div>
 
-        <!-- Mobile Navigation Links -->
-        <nav class="py-6">
+        <!-- Mobile Navigation Links - Scrollable middle section -->
+        <nav class="flex-1 overflow-y-auto py-6">
           <div v-for="item in navItems" :key="item.label" class="border-b border-black/5 last:border-b-0">
             <NuxtLink :to="item.href" @click="$emit('close')"
               class="flex items-center justify-between px-6 py-4 text-lg font-bebas-neue tracking-wider transition-colors hover:bg-gray-50"
@@ -52,53 +53,55 @@
           </div>
         </nav>
 
-        <!-- Mobile Contact Info -->
-        <div class="p-6 bg-gray-50 mt-6">
-          <h3 class="text-lg font-bebas-neue tracking-wider text-[#2C3930] mb-4">Contact Us</h3>
-          <div class="space-y-4">
-            <!-- Phone -->
-            <a href="tel:+19718038020"
-              class="flex items-center space-x-3 text-[#2C3930] hover:text-[#A27B5C] transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-              </svg>
-              <span class="text-sm">(971) 803 - 8020</span>
-            </a>
+        <!-- Mobile Contact Info - Fixed at bottom -->
+        <div class="bg-gray-50 border-t border-black/10 flex-shrink-0">
+          <div class="p-6">
+            <h3 class="text-lg font-bebas-neue tracking-wider text-[#2C3930] mb-4">Contact Us</h3>
+            <div class="space-y-4">
+              <!-- Phone -->
+              <a href="tel:+19718038020"
+                class="flex items-center space-x-3 text-[#2C3930] hover:text-[#A27B5C] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                </svg>
+                <span class="text-sm">(971) 803 - 8020</span>
+              </a>
 
-            <!-- Email -->
-            <a href="mailto:oakridgeinteriors22@gmail.com"
-              class="flex items-center space-x-3 text-[#2C3930] hover:text-[#A27B5C] transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-              </svg>
-              <span class="text-sm">oakridgeinteriors22@gmail.com</span>
-            </a>
+              <!-- Email -->
+              <a href="mailto:oakridgeinteriors22@gmail.com"
+                class="flex items-center space-x-3 text-[#2C3930] hover:text-[#A27B5C] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                </svg>
+                <span class="text-sm">oakridgeinteriors22@gmail.com</span>
+              </a>
 
-            <!-- Location -->
-            <a href="https://www.google.com/maps/search/?api=1&query=Willamette+Valley,+OR" target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center space-x-3 text-[#2C3930] hover:text-[#A27B5C] transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-              </svg>
-              <span class="text-sm">Willamette Valley, OR</span>
-            </a>
+              <!-- Location -->
+              <a href="https://www.google.com/maps/search/?api=1&query=Willamette+Valley,+OR" target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center space-x-3 text-[#2C3930] hover:text-[#A27B5C] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                </svg>
+                <span class="text-sm">Willamette Valley, OR</span>
+              </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Mobile CTA Button -->
-        <div class="p-6">
-          <NuxtLink to="/contact" @click="$emit('close')"
-            class="block w-full bg-[#A27B5C] text-white text-center py-4 text-lg font-bebas-neue tracking-wider hover:bg-[#8B6A4F] transition-colors">
-            GET AN ESTIMATE
-          </NuxtLink>
+          <!-- Mobile CTA Button -->
+          <div class="p-6 pt-0">
+            <NuxtLink to="/contact" @click="$emit('close')"
+              class="block w-full bg-[#A27B5C] text-white text-center py-4 text-lg font-bebas-neue tracking-wider hover:bg-[#8B6A4F] transition-colors">
+              GET AN ESTIMATE
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </Transition>

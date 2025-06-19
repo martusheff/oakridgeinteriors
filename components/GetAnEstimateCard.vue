@@ -20,7 +20,7 @@
         </div>
         <div class="flex justify-between items-center min-w-64">
           <span class="text-white text-xl font-light">Sunday</span>
-          <span class="text-white text-xl font-light">Closed</span>
+          <span class="text-white text-xl font-extralight">Closed</span>
         </div>
       </div>
     </div>

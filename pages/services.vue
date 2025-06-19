@@ -60,7 +60,7 @@
             :key="'step-'+index"
             class="flex items-start"
           >
-            <div class="bg-primary-500 font-bebas-neue text-4xl text-[#3F4F44] bg-transparent rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">
+            <div class="font-bebas-neue text-4xl text-[#3F4F44] bg-transparent rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">
               {{ index + 1 }}
             </div>
             <div>

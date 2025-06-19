@@ -16,7 +16,8 @@ export default defineNuxtConfig({
     '@nuxtjs/turnstile',
     '@nuxt/ui',
     'nuxt-gtag',
-    '@formkit/auto-animate'
+    '@formkit/auto-animate',
+    '@nuxtjs/color-mode'
   ],
 
   turnstile: {
@@ -32,7 +33,18 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   gtag: {
     id: 'G-NKXPF3FRL9'
+  },
+
+  colorMode: {
+    preference: 'light',
+    fallback: 'light',
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'nuxt-color-mode'
   }
-  
+
 
 })

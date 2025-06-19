@@ -2,8 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  
-
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
@@ -14,6 +12,17 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@vueuse/nuxt'
-  ]
+    '@vueuse/nuxt',
+    '@nuxtjs/turnstile'
+  ],
+
+  turnstile: {
+    siteKey: process.env.TURNSTYLE_SITEKEY,
+  },
+
+  runtimeConfig: {
+    turnstile: {
+      secretKey: process.env.TURNSTYLE_SECRETKEY,
+    },
+  },
 })

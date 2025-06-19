@@ -85,7 +85,6 @@ const form = ref({
 
 const result = ref('')
 const status = ref('')
-const turnstile = ref()
 
 const onTurnstileSuccess = (token) => {
   form.value['cf-turnstile-response'] = token
@@ -101,7 +100,6 @@ const submitForm = async () => {
       body: form.value,
     })
 
-    console.log(response)
 
     result.value = response.message
 
@@ -114,11 +112,9 @@ const submitForm = async () => {
       form.value.email = ''
       form.value.message = ''
     } else {
-      console.log(response)
       status.value = 'error'
     }
   } catch (error) {
-    console.log(error)
     status.value = 'error'
     result.value = 'Something went wrong!'
   } finally {

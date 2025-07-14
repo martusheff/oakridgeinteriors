@@ -8,7 +8,7 @@ description: Oakridge Interiors provides finish carpentry, flooring installation
   Beach all the way to Newport Beach, including the surrounding areas. Here
   Oakridge Interiors, no project is too far or near. (Website is under
   construction, too busy scheduling out your future project)
-hero: /images/uploads/pexels-kseniachernaya-5691549.jpg
+hero: /images/uploads/img_4962.jpeg
 herocta: Get An Estimate
 heroctaurl: contact
 heroctalabel: Get an Estimate

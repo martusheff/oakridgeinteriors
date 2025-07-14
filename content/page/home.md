@@ -6,7 +6,8 @@ title: Trusted Carpenter Serving The Willamette Valley and beyond.
 description: Oakridge Interiors provides finish carpentry, flooring installation
   and cabinetry from North Portland down to South Eugene. As far out as Newport
   Beach all the way to Newport Beach, including the surrounding areas. Here
-  Oakridge Interiors, no project is too far or near.
+  Oakridge Interiors, no project is too far or near. (Website is under
+  construction, too busy scheduling out your future project)
 hero: /images/uploads/pexels-kseniachernaya-5691549.jpg
 herocta: Get An Estimate
 heroctaurl: contact

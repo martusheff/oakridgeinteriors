@@ -7,8 +7,8 @@ description: Oakridge Interiors provides finish carpentry, flooring installation
   and cabinetry from North Portland down to South Eugene. As far out as Newport
   Beach all the way to Bend, including the surrounding areas. Here at Oakridge
   Interiors, no project is too far or near. (Website is under construction, too
-  busy scheduling out your future project)
-hero: /images/uploads/img_4962.jpeg
+  busy scheduling out your future project).
+hero: /images/uploads/img_6383.jpeg
 herocta: Get An Estimate
 heroctaurl: contact
 heroctalabel: Get an Estimate

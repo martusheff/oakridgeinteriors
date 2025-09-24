@@ -49,4 +49,14 @@ services:
       - "Custom stain-grade staircase "
       - Paint-grade staircase
       - Floating steps
+  - title: Custom closets/ pantries
+    description: We design and install custom closets and shelving that maximize
+      space, enhance organization, and add lasting value to your home. Whether
+      you need a walk-in closet, reach-in wardrobe, pantry, or garage storage,
+      we create tailored solutions that are as functional as they are beautiful.
+    image: /images/uploads/img_5786.jpeg
+    features:
+      - Bedroom closets
+      - Master closets
+      - "Custom pantry "
 ---

@@ -4,7 +4,7 @@ description: Gallery
 herobackground: /images/uploads/img_6380.jpeg
 images:
   - image: /images/uploads/2241630890607143111.jpeg
-  - image: /images/uploads/2241630890607143111.jpeg
+  - image: /images/uploads/img_6350.jpeg
   - image: /images/uploads/img_6353.jpg
   - image: /images/uploads/img_5783.jpg
   - image: /images/uploads/img_5049.jpg

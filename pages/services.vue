@@ -48,33 +48,6 @@
       </div>
     </div>
 
-    <!-- Our Craftsmanship Process -->
-    <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
-      <div class="bg-gray-50 p-8 sm:p-12">
-        <h2 class="text-3xl font-bebas-neue text-center tracking-wide text-gray-900 mb-8">
-          Our Craftsmanship Process
-        </h2>
-        <div class="space-y-8">
-          <div 
-            v-for="(step, index) in processSteps"
-            :key="'step-'+index"
-            class="flex items-start"
-          >
-            <div class="font-bebas-neue text-4xl text-[#3F4F44] bg-transparent rounded-full h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1 mr-4">
-              {{ index + 1 }}
-            </div>
-            <div>
-              <h3 class="text-lg font-medium text-gray-900 mb-2">
-                {{ step.title }}
-              </h3>
-              <p class="text-gray-600">
-                {{ step.description }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <Accolades/>
     <Reviews :limit="3"/>
     <GetAnEstimateCard/>

@@ -2,13 +2,16 @@
 heroimage: /images/uploads/pexels-kseniachernaya-5691549.jpg
 herobackground: /images/uploads/3a0e3ba4-db02-4555-af19-f53bd148b5ff.jpg
 herobackgroundimage: /images/uploads/3a0e3ba4-db02-4555-af19-f53bd148b5ff.jpg
-title: Trusted Carpenter Serving The Willamette Valley And Beyond.
-description: "Oakridge Interiors provides finish carpentry, flooring
-  installation and cabinetry from North Portland down to South Eugene. As far
-  out as Newport Beach all the way to Bend, including the surrounding areas.
-  Here at Oakridge Interiors, no project is too far or near. "
+title: Finish Carpentry & Casework Installation
+description: Oakridge Interiors specializes in finish carpentry for commercial
+  and residential projects throughout Oregon. Our services include door and
+  hardware installation, casework and cabinetry, flooring, and other interior
+  finish work. We work with general contractors, developers, businesses, and
+  homeowners to deliver quality craftsmanship and dependable results. From the
+  Portland area to Eugene, the Oregon Coast, Bend, and surrounding communities,
+  we're ready to discuss your next project.
 hero: /images/uploads/img_6383.jpeg
-herocta: Get An Estimate
-heroctaurl: contact
+herocta: Request a Bid
+heroctaurl: /contact
 heroctalabel: Get an Estimate
 ---
